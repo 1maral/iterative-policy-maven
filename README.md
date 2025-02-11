@@ -9,6 +9,45 @@ Iteratively calculates state-values from an environment $(k + 1)$ times with the
 
 ---
 
+### Policy Iteration (for estimating $\pi \approx \pi_*$)
+
+1. **Initialization**
+
+&ensp;&ensp;&ensp;&ensp;&ensp; $V(s) \in \mathbb{R}$ and $\pi(s) \in \mathcal{A}(s)$
+arbitrarily for all $s \in \mathcal{S}: V(terminal) \doteq 0$
+
+2. **Policy Evaluation**
+
+&ensp;&ensp;&ensp;&ensp;&ensp; Loop:
+
+&ensp;&ensp;&ensp;&ensp;&ensp; $\Delta \leftarrow 0$
+
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; Loop for each $s \in \mathcal{S}:$
+
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $v \leftarrow V(s)$
+
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $V(s) \leftarrow \sum_{s',r} p(s', r | s, \pi(s))[r + \gamma V(s')]$
+
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\Delta \leftarrow$ $max(\Delta, | v - V(s)|)$
+
+&ensp;&ensp;&ensp;&ensp;&ensp; until $\Delta < \theta$ (a small positive number determining the accuracy of estimation)
+
+3. **Policy Improvement**
+
+&ensp;&ensp;&ensp;&ensp;&ensp; $policy$-$stable \leftarrow true$
+
+&ensp;&ensp;&ensp;&ensp;&ensp; For each $s \in \mathcal{S}:$
+
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $old$-$action \leftarrow \pi (s)$
+
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\pi (s) \leftarrow argmax_{a} \sum_{s',r} p(s', r | s, a)[r + \gamma V(s')]$
+
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; If $old$-$action \neq \pi (s)$, then $policy$-$stable \leftarrow false$
+
+&ensp;&ensp;&ensp;&ensp;&ensp; If $policy$-$stable$, then stop and return $V \approx v_{*}$ and $\pi \approx \pi_{*}$; else go to 2
+
+---
+
 ### Output
 
 $k = 1$
