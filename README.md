@@ -44,7 +44,8 @@ arbitrarily for all $s \in \mathcal{S}: V(terminal) \doteq 0$
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; If $old-action \neq \pi (s)$, then $policy-stable \leftarrow false$
 
-&ensp;&ensp;&ensp;&ensp;&ensp; If $policy-stable$, then stop and return $V \approx v_{*}$ and $\pi \approx \pi_{*}$; else go to 2
+&ensp;&ensp;&ensp;&ensp;&ensp; If $policy-stable$, then stop and return
+$V \approx v_{\*}$ and $\pi \approx \pi_{\*}$; else go to 2
 
 ---
 
