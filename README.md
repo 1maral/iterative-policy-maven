@@ -34,17 +34,17 @@ arbitrarily for all $s \in \mathcal{S}: V(terminal) \doteq 0$
 
 3. **Policy Improvement**
 
-&ensp;&ensp;&ensp;&ensp;&ensp; $policy$-$stable \leftarrow true$
+&ensp;&ensp;&ensp;&ensp;&ensp; $policy-stable \leftarrow true$
 
 &ensp;&ensp;&ensp;&ensp;&ensp; For each $s \in \mathcal{S}:$
 
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $old$-$action \leftarrow \pi (s)$
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $old-action \leftarrow \pi (s)$
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\pi (s) \leftarrow argmax_{a} \sum_{s',r} p(s', r | s, a)[r + \gamma V(s')]$
 
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; If $old$-$action \neq \pi (s)$, then $policy$-$stable \leftarrow false$
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; If $old-action \neq \pi (s)$, then $policy-stable \leftarrow false$
 
-&ensp;&ensp;&ensp;&ensp;&ensp; If $policy$-$stable$, then stop and return $V \approx v_{*}$ and $\pi \approx \pi_{*}$; else go to 2
+&ensp;&ensp;&ensp;&ensp;&ensp; If $policy-stable$, then stop and return $V \approx v_{*}$ and $\pi \approx \pi_{*}$; else go to 2
 
 ---
 
