@@ -130,3 +130,9 @@ $k = 10$
   | $-6.1$ | $-7.7$ | $-8.4$ | $-8.3$ |
   | $-8.3$ | $-8.4$ | $-7.7$ | $-6.1$ |
   | $-9.0$ | $-8.3$ | $-6.1$ | $0.0$  |
+
+---
+
+### Acknowledgements
+
+Samuel Rebelsky, for his lovely & convenient .gitignore setup.
